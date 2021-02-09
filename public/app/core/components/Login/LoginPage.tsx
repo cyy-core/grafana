@@ -4,7 +4,6 @@ import { css } from 'emotion';
 
 // Components
 import { UserSignup } from './UserSignup';
-import { LoginServiceButtons } from './LoginServiceButtons';
 import LoginCtrl from './LoginCtrl';
 import { LoginForm } from './LoginForm';
 import { ChangePassword } from '../ForgottenPassword/ChangePassword';
@@ -63,7 +62,6 @@ export const LoginPage: FC = () => {
                     </LoginForm>
                   </>
                 )}
-                <LoginServiceButtons />
                 {!disableUserSignUp && <UserSignup />}
               </InnerBox>
             )}

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import config from 'app/core/config';
-import { Icon, IconName } from '@grafana/ui';
+// import { Icon, IconName } from '@grafana/ui';
 
 export interface FooterLink {
   text: string;
@@ -66,7 +66,8 @@ export function setVersionLinkFn(fn: typeof getFooterLinks) {
 }
 
 export const Footer: FC = React.memo(() => {
-  const links = getFooterLinks().concat(getVersionLinks());
+  const links: FooterLink[] = [];
+  links.push({ text: '2014-2021 深圳车友援信息技术有限公司' });
 
   return (
     <footer className="footer">
@@ -74,9 +75,7 @@ export const Footer: FC = React.memo(() => {
         <ul>
           {links.map(link => (
             <li key={link.text}>
-              <a href={link.url} target={link.target} rel="noopener">
-                <Icon name={link.icon as IconName} /> {link.text}
-              </a>
+              <span>{link.text}</span>
             </li>
           ))}
         </ul>
